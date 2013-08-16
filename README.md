@@ -1,0 +1,14 @@
+NTP
+===
+
+A basic module that overrides the /etc/ntp.conf with a list of servers. Modify
+this modules to default to internal timesource(s), etc.
+
+Samples
+=======
+
+ntp::config { 'default':
+    servers => [ '0.rhel.pool.ntp.org', '1.rhel.pool.ntp.org', '2.rhel.pool.ntp.org' ] 
+}
+
+ntp::service { 'default': ensure => running, enable => true }
