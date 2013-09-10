@@ -7,8 +7,14 @@ restrict -6 default kod nomodify notrap nopeer noquery
 restrict 127.0.0.1 
 restrict -6 ::1
 
-<% servers.each do |s| -%>
+<% if @servers and ! @servers.empty? -%>
+<% [@servers].each do |s| -%>
 server <%= s %>
+<% end -%>
+<% else -%>
+server 0.rhel.pool.ntp.org
+server 1.rhel.pool.ntp.org
+server 2.rhel.pool.ntp.org
 <% end -%>
 
 includefile /etc/ntp/crypto/pw
