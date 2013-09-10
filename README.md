@@ -2,7 +2,7 @@ ntp
 ===
 
 A basic module that overrides the /etc/ntp.conf with a list of servers. Modify
-this modules to default to internal timesource(s), etc.
+this module to default to internal timesource(s), etc.
 
 Samples
 -------
